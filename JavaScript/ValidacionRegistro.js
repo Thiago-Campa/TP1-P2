@@ -64,12 +64,28 @@ form.addEventListener("submit", function(event){
     }
 
     // VALIDACIÓN EDAD
-    if(Edad === ""){
-        errorEdad.innerText = "Este campo es obligatorio";
+if (Edad === "") {
+    errorEdad.innerText = "Este campo es obligatorio";
+    formValido = false;
+} else {
+    const fechaIngresada = new Date(Edad);
+    if (isNaN(fechaIngresada.getTime())) {
+        errorEdad.innerText = "Ingrese una fecha válida";
         formValido = false;
     } else {
-        errorEdad.innerText = "";
+        const hoy = new Date();
+        // comparar solo fechas (ignorar hora)
+        hoy.setHours(0, 0, 0, 0);
+        fechaIngresada.setHours(0, 0, 0, 0);
+
+        if (fechaIngresada > hoy) {
+            errorEdad.innerText = "La fecha no puede ser mayor a la actual";
+            formValido = false;
+        } else {
+            errorEdad.innerText = "";
+        }
     }
+}
 
     // VALIDACIÓN TELÉFONO
     if(Telefono === ""){

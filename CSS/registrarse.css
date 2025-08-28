@@ -66,6 +66,18 @@ form {
     margin: 0 auto;
 }
 
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 input, textarea {
     padding: 10px;
     border: 1px solid #ccc;
@@ -75,15 +87,29 @@ input, textarea {
 .hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;   /* 🔹 centramos ambos bloques */
+    gap: 50px;                 /* 🔹 espacio entre texto y formulario */
     padding: 40px;
-    background-image: url('/ASSETS/images/contacto.jpg'); /* Aquí tu foto */
+    background-image: url('/ASSETS/images/contacto.jpg');
     background-size: cover;
     background-position: center;
     min-height: 600px;
     height: auto;
     color: #fff;
     position: relative;
+}
+
+.hero-form {
+    position: relative;
+    z-index: 1;
+    background: #0b0c2c;
+    color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    max-width: 450px;   /* 🔹 lo estiramos un poco */
+    width: 100%;        /* 🔹 ocupa todo lo que se le permita */
+    flex-shrink: 0;
 }
 
 /* Fondo semitransparente para mejorar legibilidad */
@@ -106,6 +132,14 @@ input, textarea {
     margin-bottom: 15px;
 }
 
+.hero-form legend {
+    text-align: center;   /* Centra el texto */
+    font-weight: bold;    /* Opcional: lo hace más fuerte */
+    font-size: 20px;      /* Opcional: agranda un poco */
+    display: block;       /* Asegura que ocupe todo el ancho */
+    margin-bottom: 15px;  /* Espacio debajo */
+}
+
 .hero-texto ul {
     list-style: none;
     font-size: 1.2rem;
@@ -121,19 +155,6 @@ input, textarea {
     z-index: 1;
     max-width: 40%;   /* ya lo tenías, lo dejamos */
 }
-
-.hero-form {
-    position: relative;
-    z-index: 1;
-    background: #0b0c2c;
-    color: #fff;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    max-width: 350px;  /* achicamos el ancho */
-    flex-shrink: 0;    /* evita que se deforme */
-}
-
 
 .hero-form input,
 .hero-form textarea {

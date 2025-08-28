@@ -1,0 +1,201 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3e3f99;
+    line-height: 1.6;
+}
+
+/* Navegación */
+nav {
+    background-color: #87cece;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #3764f8;
+}
+
+/* Contenedor principal */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Botones de formulario */
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6347;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-image: url('/ASSETS/images/contacto.jpg'); /* Aquí tu foto */
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    height: auto;
+    color: #fff;
+    position: relative;
+}
+
+/* Fondo semitransparente para mejorar legibilidad */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4); /* oscurece la foto */
+}
+
+/* Texto */
+.hero-texto {
+    position: relative;
+    z-index: 1;
+    max-width: 40%;
+}
+
+.hero-texto h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.hero-texto ul {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.hero-texto ul li {
+    margin-bottom: 10px;
+}
+
+/* Formulario */
+.hero-texto {
+    position: relative;
+    z-index: 1;
+    max-width: 40%;   /* ya lo tenías, lo dejamos */
+}
+
+.hero-form {
+    position: relative;
+    z-index: 1;
+    background: #0b0c2c;
+    color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    max-width: 350px;  /* achicamos el ancho */
+    flex-shrink: 0;    /* evita que se deforme */
+}
+
+
+.hero-form input,
+.hero-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.hero-form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;  /* espacio entre Hombre - Mujer - Otro */
+    margin-bottom: 15px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* espacio entre el botón y el texto */
+    cursor: pointer;
+}
+
+.hero-form button:hover {
+    background: #e6b800;
+}
+
+.checkbox-container {
+    display: flex;
+    gap: 8px; 
+}
+
+.checkbox-container input {
+    width: auto;
+    margin-top: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #87cece;
+    color: #fff;
+    margin-top: 0px;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+}
+
+.registro-exitoso{
+    color: green;
+    font-size: 0.9rem;
+}

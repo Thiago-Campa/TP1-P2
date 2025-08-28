@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRARSE - Mi Galería</title>
+    <link rel="stylesheet" href="/CSS/registrarse.css">
+    <script src="/JavaScript/ValidacionRegistro.js" defer></script>
+    <link rel="icon" type="image/png" href="/ASSETS/icons/lapiz icono.png">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="nosotros.html">Sobre mí</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <!-- Texto a la izquierda -->
+        <div class="hero-texto">
+            <h1>REGISTRATE</h1>
+            <ul>
+                <li>✨ Accede a nustra galeria de fotos</li>
+                <li>✅ Descarga las fotos que desees</li>
+                <li>⚡Con un simple click</li>
+            </ul>
+        </div>
+
+        <!-- Formulario a la derecha -->
+        <div class="hero-form">
+            <form>
+                <legend>FORMULARIO DE REGISTRO</legend>
+                <label for="Nombre">Nombre:</label>
+                <input type="text" name="Nombre" id="Nombre" placeholder="Ingrese su nombre aqui...">
+                <span class="error" id="error-Nombre"></span>
+
+                <label for="Apellido">Apellido:</label>
+                <input type="text" name="Apellido" id="Apellido" placeholder="Ingrese su apellido aqui...">
+                <span class="error" id="error-Apellido"></span>
+
+                <label for="Email">Email:</label>
+                <input type="text" name="Email" id="Email" placeholder="Ingrese su email aqui...">
+                <span class="error" id="error-Email"></span>
+
+                <label for="Edad">Edad:</label>
+                <input type="date" name="Edad" id="Edad">
+                <span class="error" id="error-Edad"></span>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" name="telefono" id="telefono" placeholder="Ingrese su número" pattern="[0-9]{10}"
+                    maxlength="10" inputmode="numeric" required>
+                <span class="error" id="error-Telefono"></span>
+
+                <label>Género:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="Genero" value="Hombre" checked> Hombre</label>
+                    <label><input type="radio" name="Genero" value="Mujer"> Mujer</label>
+                    <label><input type="radio" name="Genero" value="Otro"> Otro</label>
+                </div>
+                <span class="error" id="error-Genero"></span>
+
+                <label for="comentario">Que tipo de Imagenes le gustaria encontrar?:</label>
+                <textarea id="comentario" name="comentario" id="comentario" rows="5" cols="50"
+                    placeholder="Escriba su comentario aquí..."></textarea>
+
+                <div class="checkbox-container">
+                <input type="checkbox" name="terminos" id="terminos" value="condiciones"> Acepta los terminos y condiciones
+                <span class="error" id="error-Termino"></span>
+                </div>
+                <input type="submit" value="Registrarse">
+                <span class="exito" id="registro-exitoso"></span>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Mi Galería
+    </footer>
+</body>
+
+</html>

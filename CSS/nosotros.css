@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3e3f99;
+    line-height: 1.6;
+}
+
+/* Navegación */
+nav {
+    background-color: #87cece;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #3764f8;;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+
+.fondo-principal {
+    position: relative; /* necesario para el overlay */
+    background-image: url('/ASSETS/images/utn.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    height: 450px;
+    overflow: hidden; /* para que el overlay no se salga */
+}
+
+.fondo-principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(60, 60, 204, 0.3);
+    z-index: 0; /* detrás del contenido */
+    border-radius: 8px; 
+}
+
+.fondo-principal > * {
+    position: relative;
+    z-index: 1;
+}
+
+.fondo-principal .texto-rectangulo {
+    position: relative; /* para que quede sobre el overlay */
+    background-color: #3e3f99; 
+    color: #fff; /* letras blancas */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px; /* ancho máximo opcional */
+    margin: 0 auto; /* centrar horizontalmente */
+    text-align: center;
+    z-index: 1;
+}
+
+/* Opcional: estilos internos */
+.fondo-principal .texto-rectangulo h1,
+.fondo-principal .texto-rectangulo p {
+    margin: 0 0 10px 0;
+}
+
+.seccion-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 20px;
+    background-color: #0b0c2c; /* fondo oscuro */
+}
+
+.tarjeta {
+    background-color: #1a1c44; /* color ligeramente más claro que el fondo */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 250px; /* tarjetas flexibles, mínimo 250px */
+    max-width: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.tarjeta h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.tarjeta p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #87cece;
+    color: #fff;
+    margin-top: 36px;
+}

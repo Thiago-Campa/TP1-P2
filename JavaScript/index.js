@@ -1,6 +1,5 @@
 const btn = document.getElementById("toggleMode");
 
-// aplicar preferencia guardada
 if (localStorage.getItem("modo") === "oscuro") {
   document.body.classList.add("dark");
   btn.innerText = "Light";
@@ -17,3 +16,12 @@ btn.addEventListener("click", () => {
     localStorage.setItem("modo", "claro");
   }
 });
+
+function toggleMenu() {
+  menuLista.classList.toggle("visible");
+}
+
+if (menuBtn && menuLista) {
+  menuBtn.addEventListener("click", toggleMenu);
+  console.log("Menú listo");
+}

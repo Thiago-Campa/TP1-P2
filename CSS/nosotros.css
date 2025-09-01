@@ -2,15 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
+    flex: 1;
     font-family: Arial, sans-serif;
     background-color: #3e3f99;
     line-height: 1.6;
 }
 
-/* Navegación */
 nav {
     background-color: #87cece;
     color: #fff;
@@ -29,7 +30,6 @@ nav ul li {
 
 nav ul li a {
     color: #fff;
-    text-decoration: none;
     font-weight: bold;
 }
 
@@ -78,7 +78,7 @@ nav ul li a:hover {
 .fondo-principal .texto-rectangulo {
     position: relative; /* para que quede sobre el overlay */
     background-color: #3e3f99; 
-    color: #fff; /* letras blancas */
+    color: #000000ea;
     padding: 20px;
     border-radius: 8px;
     max-width: 600px; /* ancho máximo opcional */
@@ -128,11 +128,9 @@ nav ul li a:hover {
     line-height: 1.4;
 }
 
-/* Footer */
 footer {
     text-align: center;
-    padding: 15px 0;
+
     background-color: #87cece;
-    color: #fff;
-    margin-top: 36px;
+    color: #000000;
 }

@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +8,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #3e3f99;
     line-height: 1.6;
+    color: #fff;
 }
 
-/* Navegación */
+/* Barra de navegación superior */
 nav {
     background-color: #87cece;
     color: #fff;
@@ -19,19 +19,18 @@ nav {
 }
 
 nav h1 {
-    flex: 1; /* ocupa espacio para empujar al centro */
+    flex: 1;
     margin-left: 570px;
-    font-family: "Poppins", "Segoe UI", Arial, sans-serif; /* tipografía elegante */
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
     font-size: 38px;
     font-weight: 600;
-    letter-spacing: 5px; /* da aire entre letras */
-    color: #fff; /* color sobrio */
+    letter-spacing: 5px;
 }
 
 nav ul {
     margin-top: 5px;
-    list-style: none;
-    display: flex;
+    list-style: none;   /* elimina viñetas */
+    display: flex;      /* organiza horizontalmente */
     justify-content: center;
 }
 
@@ -43,63 +42,107 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease; /* transición suave de color */
 }
 
 nav ul li a:hover {
     color: #3764f8;
 }
 
-
-/* Contenedor principal */
+/* Contenedor general centrado */
 .container {
     width: 80%;
     margin: 20px auto;
     text-align: center;
 }
 
-
+/* Hero (imagen de fondo con capa oscura semitransparente) */
 .fondo-principal {
-    background-image: url('/ASSETS/images/principal_950_blog-20\ \(1\).jpg'); /* ruta de tu imagen */
-    background-size: cover;      /* ocupa todo el contenedor */
-    background-position: center; /* centra la imagen */
+    position: relative;
+    background-image: url('/ASSETS/images/principal_950_blog-20 (1).jpg');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    padding: 100px 20px;         /* espacio interno */
-    color: #fff;                 /* texto blanco para que se vea sobre la imagen */
+    padding: 100px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    min-height: 420px;
+    overflow: hidden;
 }
 
-.fondo-principal h1{
-    color: #000;
+/* Capa de color encima de la imagen */
+.fondo-principal::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(14, 25, 84, 0.35);
+    border-radius: 8px;
+    z-index: 0;
 }
 
-.fondo-principal p{
-    color: #000;
+/* Asegura que el texto quede por encima del overlay */
+.fondo-principal > * {
+    position: relative;
+    z-index: 1;
 }
 
-/* Sección de tarjetas */
+/* Animación en el título principal (aparece de abajo con fade in) */
+.fondo-principal h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    opacity: 0;                   /* empieza invisible */
+    transform: translateY(30px);  /* empieza desplazado hacia abajo */
+    animation: fadeUp 1s ease-out forwards;
+}
+
+/* Definición de la animación (keyframes = pasos de la animación) */
+@keyframes fadeUp {
+    to {
+        opacity: 1;               /* aparece */
+        transform: translateY(0); /* vuelve a su lugar */
+    }
+}
+
+.fondo-principal p {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* Caja opcional con fondo semitransparente */
+.caja-transparente {
+    background-color: rgba(62, 63, 153, 0.65);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Tarjetas (cuadrados de información) */
 .seccion-tarjetas {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 50px 20px;
-    background-color: #0b0c2c; /* fondo oscuro */
+    background-color: #0b0c2c;
 }
 
 .tarjeta {
-    background-color: #1a1c44; /* color ligeramente más claro que el fondo */
+    background-color: rgba(26, 28, 68, 0.85);
     color: #fff;
     padding: 20px;
     border-radius: 10px;
-    flex: 1 1 250px; /* tarjetas flexibles, mínimo 250px */
+    flex: 1 1 250px;
     max-width: 300px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s; /* animación hover */
 }
 
 .tarjeta:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* se levanta al pasar el mouse */
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
@@ -113,10 +156,19 @@ nav ul li a:hover {
     line-height: 1.4;
 }
 
-/* Footer */
+/* Pie de página */
 footer {
     text-align: center;
     padding: 15px 0;
     background-color: #87cece;
     color: #fff;
+    margin-top: 36px;
+}
+
+/* Ajustes para pantallas chicas */
+@media (max-width: 768px) {
+    nav h1 { font-size: 28px; margin-left: 0; text-align: center; }
+    .container { width: 92%; }
+    .fondo-principal h1 { font-size: 36px; }
+    .fondo-principal p { font-size: 1rem; }
 }

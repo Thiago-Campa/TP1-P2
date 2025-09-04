@@ -12,25 +12,16 @@ body {
 }
 
 /* Barra de navegación superior */
+/* Navegación */
 nav {
     background-color: #87cece;
     color: #fff;
     padding: 10px 0;
 }
 
-nav h1 {
-    flex: 1;
-    margin-left: 570px;
-    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-    font-size: 38px;
-    font-weight: 600;
-    letter-spacing: 5px;
-}
-
 nav ul {
-    margin-top: 5px;
-    list-style: none;   /* elimina viñetas */
-    display: flex;      /* organiza horizontalmente */
+    list-style: none;
+    display: flex;
     justify-content: center;
 }
 
@@ -42,12 +33,12 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease; /* transición suave de color */
 }
 
 nav ul li a:hover {
     color: #3764f8;
 }
+
 
 /* Contenedor general centrado */
 .container {
@@ -171,4 +162,24 @@ footer {
     .container { width: 92%; }
     .fondo-principal h1 { font-size: 36px; }
     .fondo-principal p { font-size: 1rem; }
+}
+
+#toggleMode {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* círculo */
+    background-color: #c0c0c0; /* gris del centro */
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 6px solid transparent; /* espacio para el borde */
+    position: relative;
 }

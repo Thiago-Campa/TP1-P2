@@ -8,8 +8,10 @@
 /* Estilos generales del body */
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f9; /* color de fondo gris claro */
-    color: #333;         /* color del texto */
+    background: #f4f4f9;
+    /* color de fondo gris claro */
+    color: #333;
+    /* color del texto */
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -18,7 +20,8 @@ body {
 
 /* Encabezado */
 header {
-    background: #222; /* fondo negro/gris oscuro */
+    background: #222;
+    /* fondo negro/gris oscuro */
     padding: 10px 20px;
 }
 
@@ -27,18 +30,21 @@ header nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-start;
-    gap: 20px; /* separación entre enlaces */
+    gap: 20px;
+    /* separación entre enlaces */
 }
 
 header nav ul li a {
     text-decoration: none;
-    color: #fff;          /* enlaces blancos */
+    color: #fff;
+    /* enlaces blancos */
     font-weight: bold;
-    transition: color .3s;
+    transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #ff9800; /* cambia a naranja al pasar el mouse */
+    color: #ff9800;
+    /* cambia a naranja al pasar el mouse */
 }
 
 /* Menú extra (si usas la clase .menu-list en otro lugar) */
@@ -55,7 +61,7 @@ header nav ul li a:hover {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    transition: color .3s;
+    transition: color 0.3s;
 }
 
 .menu-list li a:hover {
@@ -71,11 +77,15 @@ h1 {
 
 /* Contenedor principal de la galería */
 .gallery {
-    max-width: 1200px;         /* ancho máximo de la galería */
-    margin: 0 auto;            /* centra la galería */
+    max-width: 1200px;
+    /* ancho máximo de la galería */
+    margin: 0 auto;
+    /* centra la galería */
     padding: 20px;
-    display: grid;             /* usa grilla */
-    gap: 20px;                 /* separación entre imágenes */
+    display: grid;
+    /* usa grilla */
+    gap: 20px;
+    /* separación entre imágenes */
     flex: 1;
 }
 
@@ -84,19 +94,21 @@ h1 {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,.15);
-    transition: transform .25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease;
 }
 
 .img-container:hover {
-    transform: scale(1.02); /* zoom suave al pasar el mouse */
+    transform: scale(1.02);
+    /* zoom suave al pasar el mouse */
 }
 
 /* Imágenes dentro de la galería */
 .img-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* recorta para que todas se vean uniformes */
+    object-fit: cover;
+    /* recorta para que todas se vean uniformes */
     display: block;
 }
 
@@ -107,15 +119,16 @@ h1 {
     right: 10px;
     text-decoration: none;
     font-size: 14px;
-    background: rgba(34,34,34,.8);
+    background: rgba(34, 34, 34, 0.8);
     color: #fff;
     padding: 8px 12px;
     border-radius: 6px;
-    transition: background .25s;
+    transition: background 0.25s;
 }
 
 .download-btn:hover {
-    background: #ff9800; /* naranja al pasar el mouse */
+    background: #ff9800;
+    /* naranja al pasar el mouse */
 }
 
 /* Pie de página */
@@ -156,8 +169,10 @@ footer {
     right: 10px;
     width: 60px;
     height: 60px;
-    border-radius: 50%; /* círculo */
-    background-color: #c0c0c0; /* gris del centro */
+    border-radius: 50%;
+    /* círculo */
+    background-color: #c0c0c0;
+    /* gris del centro */
     color: #000;
     cursor: pointer;
     font-size: 12px;
@@ -166,6 +181,46 @@ footer {
     align-items: center;
     justify-content: center;
 
-    border: 6px solid transparent; /* espacio para el borde */
+    border: 6px solid transparent;
+    /* espacio para el borde */
     position: relative;
+}
+
+/* Contenedor de la valoración */
+.rating-container {
+    display: none;
+    /* oculto al inicio */
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+    max-width: 400px;
+}
+
+/* Estrellas */
+.rating-container .stars span {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ccc;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.rating-container .stars span:hover {
+    transform: scale(1.2);
+    color: gold;
+}
+
+.rating-container .stars span.active {
+    color: gold;
+    transform: scale(1.1);
+}
+
+/* Mensaje de resultado */
+#ratingMessage {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #28a745;
+    /* verde tipo check */
 }

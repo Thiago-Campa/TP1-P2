@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Estilos generales del body */
 body {
     font-family: Arial, sans-serif;
     background: #f4f4f9;
@@ -18,26 +17,28 @@ body {
     min-height: 100vh;
 }
 
-/* Encabezado */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     background: #222;
-    /* fondo negro/gris oscuro */
     padding: 10px 20px;
 }
 
-/* Menú dentro del header */
 header nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-start;
     gap: 20px;
-    /* separación entre enlaces */
 }
 
 header nav ul li a {
     text-decoration: none;
     color: #fff;
-    /* enlaces blancos */
     font-weight: bold;
     transition: color 0.3s;
 }
@@ -68,7 +69,15 @@ header nav ul li a:hover {
     color: #ff9800;
 }
 
-/* Título de la página */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+}
+
 h1 {
     text-align: center;
     margin: 20px 0;
@@ -108,11 +117,9 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* recorta para que todas se vean uniformes */
     display: block;
 }
 
-/* Botón de descarga */
 .download-btn {
     position: absolute;
     bottom: 10px;
@@ -128,7 +135,6 @@ h1 {
 
 .download-btn:hover {
     background: #ff9800;
-    /* naranja al pasar el mouse */
 }
 
 /* Pie de página */
@@ -142,24 +148,22 @@ footer {
 
 /* --- Media Queries (Diseño Responsivo) --- */
 
-/* A partir de 600px de ancho: 2 columnas */
-@media (min-width: 600px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
     }
-}
 
-/* A partir de 900px de ancho: 4 columnas */
-@media (min-width: 900px) {
-    .gallery {
-        grid-template-columns: repeat(4, 1fr);
+    .hero-texto {
+        order: 1; /* primero */
+        width: 100%;
+        max-width: 500px;
     }
-}
 
-/* A partir de 1200px de ancho: 6 columnas */
-@media (min-width: 1200px) {
-    .gallery {
-        grid-template-columns: repeat(6, 1fr);
+    .hero-form {
+        order: 2; /* abajo */
+        width: 100%;
+        max-width: 500px;
     }
 }
 

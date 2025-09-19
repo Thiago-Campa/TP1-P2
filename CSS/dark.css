@@ -23,7 +23,6 @@ body.dark input[type="submit"] {
   border: 1px solid #444;
 }
 
-/* Nav y footer */
 body.dark nav,
 body.dark footer {
   background-color: #222;
@@ -37,7 +36,6 @@ body.dark nav ul li a:hover {
   color: #87cece;
 }
 
-/* Secciones y contenedores frecuentes */
 body.dark .seccion-tarjetas,
 body.dark .devices-section,
 body.dark .seccion,
@@ -47,7 +45,6 @@ body.dark .bloque {
   border-color: #333;
 }
 
-/* Tarjetas / cajas */
 body.dark .tarjeta,
 body.dark .card,
 body.dark .box,
@@ -57,7 +54,6 @@ body.dark .panel {
   border: 1px solid #333;
 }
 
-/* Formularios (registrarse) */
 body.dark input[type="text"],
 body.dark input[type="email"],
 body.dark input[type="tel"],

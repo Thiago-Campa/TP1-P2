@@ -1,4 +1,3 @@
-/* Reset básico para quitar márgenes y paddings por defecto */
 * {
     margin: 0;
     padding: 0;
@@ -6,46 +5,83 @@
 }
 
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f4f9;
-    /* color de fondo gris claro */
-    color: #333;
-    /* color del texto */
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    background-color: #3e3f99;
+    /* morado */
+    color: white;
+    transition: background 0.3s, color 0.3s;
 }
 
-html, body {
+nav {
+    background-color: #87cece;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #3764f8;
+    ;
+}
+
+html,
+body {
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-header {
-    background: #222;
-    padding: 10px 20px;
+h1, h2 {
+    border-radius: 50px;
+    padding: 1px 2px;
+    text-align: center;
+    margin: 15px;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-}
-
-header nav ul li a {
-    text-decoration: none;
+.menu-btn {
+    position: fixed;
+    top: 0px;
+    background-color: #5f5f5f;
     color: #fff;
-    font-weight: bold;
-    transition: color 0.3s;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
-header nav ul li a:hover {
-    color: #ff9800;
-    /* cambia a naranja al pasar el mouse */
+.menu-list {
+    list-style: none;
+    display: none;
+    padding: 10px;
+    background-color: #131336;
+    
+}
+
+.menu-list.visible {
+    display: block;
+    display: flex;
+    gap: 20px;                 
+}
+
+.menu-list li {
+    margin: 10px 0;
 }
 
 /* Menú extra (si usas la clase .menu-list en otro lugar) */
@@ -80,25 +116,20 @@ header nav ul li a:hover {
 
 h1 {
     text-align: center;
-    margin: 20px 0;
-    color: #444;
+    padding: 10px;
+    border-radius: 15px;
 }
 
-/* Contenedor principal de la galería */
 .gallery {
     max-width: 1200px;
-    /* ancho máximo de la galería */
     margin: 0 auto;
-    /* centra la galería */
     padding: 20px;
     display: grid;
-    /* usa grilla */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    /* separación entre imágenes */
     flex: 1;
 }
 
-/* Cada tarjeta de imagen */
 .img-container {
     position: relative;
     border-radius: 12px;
@@ -112,7 +143,6 @@ h1 {
     /* zoom suave al pasar el mouse */
 }
 
-/* Imágenes dentro de la galería */
 .img-container img {
     width: 100%;
     height: 100%;
@@ -137,7 +167,6 @@ h1 {
     background: #ff9800;
 }
 
-/* Pie de página */
 footer {
     text-align: center;
     padding: 15px 0;
@@ -155,13 +184,13 @@ footer {
     }
 
     .hero-texto {
-        order: 1; /* primero */
+        order: 1;
         width: 100%;
         max-width: 500px;
     }
 
     .hero-form {
-        order: 2; /* abajo */
+        order: 2;
         width: 100%;
         max-width: 500px;
     }
@@ -174,9 +203,7 @@ footer {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    /* círculo */
     background-color: #c0c0c0;
-    /* gris del centro */
     color: #000;
     cursor: pointer;
     font-size: 12px;
@@ -186,14 +213,11 @@ footer {
     justify-content: center;
 
     border: 6px solid transparent;
-    /* espacio para el borde */
     position: relative;
 }
 
-/* Contenedor de la valoración */
 .rating-container {
     display: none;
-    /* oculto al inicio */
     margin: 20px auto;
     text-align: center;
     padding: 20px;
@@ -203,7 +227,7 @@ footer {
     max-width: 400px;
 }
 
-/* Estrellas */
+/* Estrellas ----------------------------------------------------------------
 .rating-container .stars span {
     font-size: 2rem;
     cursor: pointer;
@@ -221,10 +245,10 @@ footer {
     transform: scale(1.1);
 }
 
-/* Mensaje de resultado */
+/* Mensaje de resultado 
 #ratingMessage {
     margin-top: 10px;
     font-weight: bold;
     color: #28a745;
-    /* verde tipo check */
-}
+    /* verde tipo check 
+} */
